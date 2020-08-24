@@ -1,0 +1,98 @@
+* {
+    font-family: "Open Sans";
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper,
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
+}
+
+#fixedHeader {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgb(38, 41, 46);
+    background: linear-gradient(90deg, rgba(38, 41, 46, 1) 11%, rgba(34, 40, 49, 1) 55%, rgba(57, 62, 70, 1) 89%);
+    display: flex;
+}
+
+#fixedHeader_text {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    font-size: 30px;
+}
+
+#contentWrapper {
+    display: flex;
+    height: 100%;
+}
+
+#sideBar {
+    width: 120px;
+    background-color: #393E46;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.sideBarItem {
+    color: white;
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+    flex: 1;
+}
+
+.sideBarItem div {
+    pointer-events: none;
+    border-bottom: none;
+}
+
+.sideBarItem:hover {
+    background-color: #131417
+}
+
+.sideBarImg img {
+    width: 50px;
+}
+
+.sideBarSelected {
+    background-color: #00ADB5;
+}
+#driverTable{
+    margin: 150px;
+}
+
+#driverTable, tr, td, th{
+    width: 1000px;
+    border: 2px solid #222831;
+    border-collapse: collapse;
+    text-align: center;
+}
+#driverTable thead{
+    background-color: #222831;
+}
+#driverTableHead{
+    background-color: #222831;
+    color: white;
+    height: 15px;
+}
