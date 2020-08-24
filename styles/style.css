@@ -15,7 +15,7 @@ body {
 #wrapper {
     display: flex;
     flex-direction: column;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 #fixedHeader {
@@ -49,6 +49,7 @@ body {
     align-items: center;
 
 }
+
 .sideBarItem {
     color: white;
     width: 100%;
@@ -56,10 +57,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
     border-bottom: 1px solid white;
     cursor: pointer;
     flex: 1;
+    justify-content: center;
 }
 
 .sideBarItem div {
@@ -78,21 +79,88 @@ body {
 .sideBarSelected {
     background-color: #00ADB5;
 }
-#driverTable{
-    margin: 150px;
+
+/*----------------------------CONTENT----------------------------*/
+#content {
+    background-color: #F5F5F5;
+    flex: 1;
+    display: flex;
 }
 
-#driverTable, tr, td, th{
-    width: 1000px;
+/*----------------------------TABlE----------------------------*/
+#tableWrapper {
+    display: flex;
+    height: 500px;
+    overflow: auto;
+    margin: 50px;
+    width: 100%;
+}
+
+#driverTable {
+    flex: 1;
+}
+
+#driverTable,
+tr,
+td,
+th {
     border: 2px solid #222831;
     border-collapse: collapse;
     text-align: center;
+    font-size: 18px;
 }
-#driverTable thead{
-    background-color: #222831;
+#driverTable td, th{
+    padding: 10px 25px;
 }
-#driverTableHead{
+th {
+    background: #222831;
+    position: sticky;
+    top: -2px;
+    height: 25px;
+}
+
+tr:nth-child(even) {
+    background-color: #E6E7E8;
+}
+
+tr:hover {
+    background-color: #AAE3E6;
+}
+
+#driverTableHead th {
+    padding: 15px 0;
+}
+
+#driverTableHead {
     background-color: #222831;
     color: white;
-    height: 15px;
+    height: 25px;
+}
+
+.btnTable {
+    margin: 0px 5px;
+    /* padding: 8px 20px; */
+    background-color: white;
+    border: 1px solid #00ADB5;
+    color: #00ADB5;
+
+    transition-duration: 0.3s;
+    width: 50%;
+    height: 40px;
+}
+
+.btnTable:hover {
+    background-color: #00ADB5;
+    color: white;
+}
+
+.btnDelete {
+    color: #F44336;
+    border: 1px solid #F44336;
+    width: 30%;
+}
+
+.btnDelete:hover {
+    background-color: #F44336;
+    color: white;
 }
