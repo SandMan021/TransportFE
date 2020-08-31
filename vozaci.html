@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Transport | Početna</title>
+    <title>Transport | Vozači</title>
     <link rel='stylesheet' type='text/css' href='./styles/style.css'>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <meta charset="utf-8">
@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <div id="wrapper">
         <div id="fixedHeader">
             <div id="fixedHeader_text">Kovačević Transport</div>
@@ -38,26 +39,64 @@
                 </div>
             </div>
             <div id="content">
-                
+                <div class="tableInputFields">
+                    <input type="text" placeholder="Unesite pojam za pretragu" id="searchDriver">
+
+                    <span>Odaberi kriterijum za pretragu:</span>
+                    <div class="radioLabelDriver">
+                        <input type="radio" id="searchDriverByName" name="driver" value="searchDriverByName" checked>
+                        <label for="searchDriverByName">po imenu</label>
+                    </div>
+                    <div class="radioLabelDriver">
+                        <input type="radio" id="searchDriverByLastName" name="driver" value="searchDriverByLastName">
+                        <label for="searchDriverByLastName">po prezimenu</label>
+                    </div>
+                    <div class="radioLabelDriver">
+                        <input type="radio" id="searchDriverByUMCD" name="driver" value="searchDriverByUMCD">
+                        <label for="searchDriverByUMCD">po JMBG-u</label>
+                    </div>
+                    <div class="radioLabelDriver">
+                        <input type="radio" id="searchDriverByWN" name="driver" value="searchDriverByWN">
+                        <label for="searchDriverByWN">po br. radne knjižice</label>
+                    </div>
+                </div>
                 <div id="tableWrapper">
-                <table id="driverTable">
-                    <thead>
-                    <tr id="driverTableHead">
-                        <th>ID</th>
-                        <th>Ime</th>
-                        <th>Prezime</th>
-                        <th>JMBG</th>
-                        <th>Broj radne knjižice</th>
-                        <th>Uredi</th>
-                    </tr>
-                </thead>
-                <tbody id="driverTableBody">
-                </tbody>
-                </table>
-            </div>
+                    <table id="driverTable">
+                        <thead>
+                            <tr id="driverTableHead">
+                                <th>ID</th>
+                                <th>Ime</th>
+                                <th>Prezime</th>
+                                <th>JMBG</th>
+                                <th>Broj radne knjižice</th>
+                                <th>Uredi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="driverTableBody">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
+
+    </div>
+    <div id="modalDelete">
+        <div id="modalWrapper">
+            <div id="modalWrapperTop">
+                <span>Obriši vozača?</span>
+                <img src="./img/Beli X.svg" id="zatvoriModalniDetaljnije">
+            </div>
+            <div id="modalDeleteWrapperContent">
+                <div>Da li ste sigurni da želite da obrišete vozača: </div>
+
+                <div id="modalDeleteButtons">
+                    <button id="btnDeleteDriver">Da</button>
+                    <button id="btnCancelDeleteDriver">Odustani od brisanja</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./scripts/script.js"></script>
 </body>
 
