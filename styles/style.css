@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+button{
+    cursor: pointer;
+}
+
 #wrapper,
 html,
 body {
@@ -95,7 +99,8 @@ body {
     margin-bottom: 15px;
     align-items: center;
 }
-.tableInputFields>span{
+
+.tableInputFields>span {
     font-size: 20px;
 }
 
@@ -111,10 +116,12 @@ body {
     padding: 10px;
     align-items: center;
 }
-.radioLabelDriver:first-of-type{
+
+.radioLabelDriver:first-of-type {
     border-left: none;
     margin-left: 15px;
 }
+
 /*----------------------------TABlE----------------------------*/
 #tableWrapper {
     display: flex;
@@ -194,15 +201,16 @@ tr:hover {
     background-color: #F44336;
     color: white;
 }
-.PrikaziVisibility{
-    visibility: visible !important;
- }
 
- /*----------------------------MODAL DELETE-----------------------*/
- #modalDelete{
+.PrikaziVisibility {
+    visibility: visible !important;
+}
+
+/*----------------------------MODAL DELETE-----------------------*/
+#modalDelete {
     width: 100%;
     height: 100%;
-    background: rgba(216, 216, 218,.5);
+    background: rgba(216, 216, 218, .5);
     position: fixed;
     top: 0;
     left: 0;
@@ -211,43 +219,93 @@ tr:hover {
     visibility: hidden;
     z-index: 300;
 }
-#modalWrapper{
+
+#modalWrapper {
     align-items: center;
     margin: auto;
     width: 30%;
     border: 1px solid black;
 }
-#modalWrapperTop{
-    background-color: #222831;
+
+.modalWrapperTop {
+    background: linear-gradient(90deg, rgba(38, 41, 46, 1) 11%, rgba(34, 40, 49, 1) 55%, rgba(57, 62, 70, 1) 89%);
     display: flex;
     margin: 0;
     padding: 0;
 }
-#modalWrapperTop span{
+
+.modalWrapperTop span {
     color: white;
     margin: auto;
     flex: 1;
     font-size: 1.5rem;
     padding: 10px;
 }
-#modalWrapperTop img{
+
+.modalWrapperTop img {
     width: 50px;
 }
-#zatvoriModalniDetaljnije{
+
+#zatvoriModalniDetaljnije {
     cursor: pointer;
 }
-#modalDeleteWrapperContent{
+
+#modalDeleteWrapperContent {
     background-color: white;
     padding: 15px;
-}
-#modalDeleteWrapperContent{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#modalniDetalji{
+#modalniDetalji {
     padding: 3px 25px 3px 5px;
     cursor: pointer;
     text-align: left;
+}
+#modalMoreInfo{
+    width: 100%;
+    height: 100%;
+    background: rgba(216, 216, 218, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    z-index: 300;
+}
+#modalWrapperInfo{
+    align-items: center;
+    margin: auto;
+    width: 70%;
+    border: 1px solid black;
+}
+#closeModalMoreInfo{
+    cursor: pointer;
+}
+#modalMoreInfoDriverPicture img{
+width: 200px;
+}
+#modalMoreInfoWrapperContent{
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#modalMoreInfoDriverDetails{
+    display: flex;
+    margin-bottom: 50px;
+}
+#modalMoreInfoDriverPicture{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+}
+#modalMoreInfoDriverData{
+    display: flex;
+    flex-direction: column;
 }
