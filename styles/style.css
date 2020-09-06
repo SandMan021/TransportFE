@@ -317,8 +317,9 @@ tr:hover {
     cursor: pointer;
 }
 
-#modalMoreInfoDriverPicture img {
-    width: 200px;
+#modalMoreInfoDriverPicture div>img {
+    width: 250px;
+    object-fit: contain;
 }
 
 #modalMoreInfoWrapperContent {
@@ -345,4 +346,13 @@ tr:hover {
 #modalMoreInfoDriverData {
     display: flex;
     flex-direction: column;
+}
+.btnModalInfoCancel{
+    border: 1px solid #F44336;
+    color: #F44336;
+}
+.btnModalInfoSaveChanges{
+    background-color: #00ADB5;
+    border: 1px solid #00ADB5;
+    color: white;
 }

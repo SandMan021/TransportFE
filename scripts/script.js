@@ -200,7 +200,7 @@ function showMoreDriverInfo(e) {
     document.getElementById("modalMoreInfoWrapperContent").innerHTML = `
     <div id="modalMoreInfoDriverDetails">
                     <div id="modalMoreInfoDriverPicture">
-                        <img src="./img/account_circle-black-18dp.svg">
+                        <div><img src="./img/account_circle-black-18dp.svg"></div>
                         <input id="my-file-selector" type="file" name="file">
                     </div>
                     <div id="modalMoreInfoDriverData">
@@ -224,8 +224,8 @@ function showMoreDriverInfo(e) {
                     </div>
                 </div>
                 <div id="modalMoreInfoButtons">
-                <button id="btnModalInfoSaveChanges">Sačuvaj promene</button>
-                <button id="btnCancelModalInfo">Odustani</button>
+                <button id="btnModalInfoSaveChanges" class="btnModal btnModalInfoSaveChanges">Sačuvaj promene</button>
+                <button id="btnCancelModalInfo" class="btnModal btnModalInfoCancel">Odustani</button>
             </div>
     `;
 
