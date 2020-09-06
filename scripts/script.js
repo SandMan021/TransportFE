@@ -1,121 +1,123 @@
-var array = [{
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 2,
-    "name": "Milos",
-    "lastName": "Tomasevic",
-    "umcn": "521236548512",
-    "workbookNumber": "856987"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 2,
-    "name": "Milos",
-    "lastName": "Tomasevic",
-    "umcn": "521236548512",
-    "workbookNumber": "856987"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 2,
-    "name": "Milos",
-    "lastName": "Tomasevic",
-    "umcn": "521236548512",
-    "workbookNumber": "856987"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 2,
-    "name": "Milos",
-    "lastName": "Tomasevic",
-    "umcn": "521236548512",
-    "workbookNumber": "856987"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 2,
-    "name": "Milos",
-    "lastName": "Tomasevic",
-    "umcn": "521236548512",
-    "workbookNumber": "856987"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}, {
-    "id": 1,
-    "name": "Ivan",
-    "lastName": "Kocoljevac",
-    "umcn": "154785968459",
-    "workbookNumber": "254569"
-}];
+// var array = [{
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 2,
+//     "name": "Milos",
+//     "lastName": "Tomasevic",
+//     "umcn": "521236548512",
+//     "workbookNumber": "856987"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 2,
+//     "name": "Milos",
+//     "lastName": "Tomasevic",
+//     "umcn": "521236548512",
+//     "workbookNumber": "856987"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 2,
+//     "name": "Milos",
+//     "lastName": "Tomasevic",
+//     "umcn": "521236548512",
+//     "workbookNumber": "856987"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 2,
+//     "name": "Milos",
+//     "lastName": "Tomasevic",
+//     "umcn": "521236548512",
+//     "workbookNumber": "856987"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 2,
+//     "name": "Milos",
+//     "lastName": "Tomasevic",
+//     "umcn": "521236548512",
+//     "workbookNumber": "856987"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }, {
+//     "id": 1,
+//     "name": "Ivan",
+//     "lastName": "Kocoljevac",
+//     "umcn": "154785968459",
+//     "workbookNumber": "254569"
+// }];
 
 //http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/getAll
 
-axios.get("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/getAll", {
-        crossdomain: true
-    })
+var array = [];
+axios.get("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/getAll")
     .then(res => {
         nekiNizKojiJeStigaoSaAPIJA = res.data;
         console.log("Ovo je stiglo", nekiNizKojiJeStigaoSaAPIJA);
+        array = nekiNizKojiJeStigaoSaAPIJA;
+        console.log(array);
+        buildTable(array);
     })
     .catch(err => {
         console.log(err.response);
@@ -124,7 +126,7 @@ axios.get("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/dri
 function addListenersToDelete() {
     let listOfDeleteButtonsInTable = document.getElementsByClassName("btnDelete");
     for (let i = 0; i < listOfDeleteButtonsInTable.length; i++) {
-        listOfDeleteButtonsInTable[i].addEventListener("click", openCloseModalWindowDelete);
+        listOfDeleteButtonsInTable[i].addEventListener("click", showDeleteWindow);
     }
 }
 
@@ -137,7 +139,6 @@ function addListenersToMoreInfo() {
 /*-----------Modal delete------------ */
 document.getElementById("zatvoriModalniDetaljnije").addEventListener("click", openCloseModalWindowDelete);
 document.getElementById("modalDelete").addEventListener("click", checkIfClickedModalDelete);
-document.getElementById("btnCancelDeleteDriver").addEventListener("click", openCloseModalWindowDelete);
 
 /*-----------Modal more info---------------*/
 document.getElementById("closeModalMoreInfo").addEventListener("click", openCloseModalWindowInfo);
@@ -155,14 +156,11 @@ function checkIfClickedModalMoreInfo(e) {
     }
 }
 
-buildTable(array);
-
 function buildTable(data) {
     var table = document.getElementById('driverTableBody');
 
     for (var i = 0; i < data.length; i++) {
         var row = `<tr>
-            <td>` + data[i].id + `</td>
             <td>` + data[i].name + `</td>
             <td>` + data[i].lastName + `</td>
             <td>` + data[i].umcn + `</td>
@@ -177,6 +175,23 @@ function buildTable(data) {
 
     addListenersToDelete();
     addListenersToMoreInfo();
+}
+
+function showDeleteWindow(e) {
+    let selectedDriver = returnDriverDataByUMCN(e.target.getAttribute("data-UMCN"));
+
+    document.getElementById("modalDeleteWrapperContent").innerHTML = `
+    <div id="modalDeleteContentText">Da li ste sigurni da želite da obrišete vozača: </div>
+    <div id="selectedDriverDelete">`+ selectedDriver.name + ` `+ selectedDriver.lastName +`</div>
+    <div id="modalDeleteButtons">
+        <button id="btnDeleteDriver" class="btnModal btnModalConfirmDelete">Obriši</button>
+        <button id="btnCancelDeleteDriver" class="btnModal btnModalCancelDelete">Odustani od brisanja</button>
+    </div>
+    `;
+
+    document.getElementById("btnCancelDeleteDriver").addEventListener("click", openCloseModalWindowDelete);
+
+    openCloseModalWindowDelete();
 }
 
 function showMoreDriverInfo(e) {

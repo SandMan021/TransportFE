@@ -5,7 +5,7 @@
     padding: 0;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
@@ -220,6 +220,35 @@ tr:hover {
     z-index: 300;
 }
 
+#modalDeleteContentText {
+    font-size: 20px;
+}
+
+#selectedDriverDelete {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 15px 0;
+}
+#modalDeleteButtons{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+.btnModal {
+    background-color: white;
+    margin: 0 10px;
+    padding: 12px 28px;
+    font-size: 15px;
+}
+.btnModalConfirmDelete{
+    border: 1px solid #F44336;
+    color: white;
+    background-color: #F44336;
+}
+.btnModalCancelDelete{
+    color: #00ADB5;
+    border: 1px solid #00ADB5;
+}
 #modalWrapper {
     align-items: center;
     margin: auto;
@@ -263,7 +292,8 @@ tr:hover {
     cursor: pointer;
     text-align: left;
 }
-#modalMoreInfo{
+
+#modalMoreInfo {
     width: 100%;
     height: 100%;
     background: rgba(216, 216, 218, .5);
@@ -275,37 +305,44 @@ tr:hover {
     visibility: hidden;
     z-index: 300;
 }
-#modalWrapperInfo{
+
+#modalWrapperInfo {
     align-items: center;
     margin: auto;
     width: 70%;
     border: 1px solid black;
 }
-#closeModalMoreInfo{
+
+#closeModalMoreInfo {
     cursor: pointer;
 }
-#modalMoreInfoDriverPicture img{
-width: 200px;
+
+#modalMoreInfoDriverPicture img {
+    width: 200px;
 }
-#modalMoreInfoWrapperContent{
+
+#modalMoreInfoWrapperContent {
     background-color: white;
     padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#modalMoreInfoDriverDetails{
+
+#modalMoreInfoDriverDetails {
     display: flex;
     margin-bottom: 50px;
 }
-#modalMoreInfoDriverPicture{
+
+#modalMoreInfoDriverPicture {
     display: flex;
     flex-direction: column;
     margin-right: 30px;
     align-items: center;
     justify-content: center;
 }
-#modalMoreInfoDriverData{
+
+#modalMoreInfoDriverData {
     display: flex;
     flex-direction: column;
 }
