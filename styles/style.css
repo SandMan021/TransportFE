@@ -229,26 +229,31 @@ tr:hover {
     font-size: 30px;
     margin: 15px 0;
 }
-#modalDeleteButtons{
+
+#modalDeleteButtons {
     display: flex;
     flex-direction: row;
     margin: 20px 0;
 }
+
 .btnModal {
     background-color: white;
     margin: 0 10px;
     padding: 12px 28px;
     font-size: 15px;
 }
-.btnModalConfirmDelete{
+
+.btnModalConfirmDelete {
     border: 1px solid #F44336;
     color: white;
     background-color: #F44336;
 }
-.btnModalCancelDelete{
+
+.btnModalCancelDelete {
     color: #00ADB5;
     border: 1px solid #00ADB5;
 }
+
 #modalWrapper {
     align-items: center;
     margin: auto;
@@ -347,12 +352,70 @@ tr:hover {
     display: flex;
     flex-direction: column;
 }
-.btnModalInfoCancel{
+
+.btnModalInfoCancel {
     border: 1px solid #F44336;
     color: #F44336;
 }
-.btnModalInfoSaveChanges{
+
+.btnModalInfoSaveChanges {
     background-color: #00ADB5;
     border: 1px solid #00ADB5;
     color: white;
+}
+
+#addDriverBTN {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+#btnAddNewDriver {
+    background-color: white;
+    border: 1px solid #222831;
+    color: #222831;
+    margin-right: 10px;
+    padding: 14px 40px;
+    transition: 0.3s;
+}
+
+#btnAddNewDriver:hover {
+    background-color: #222831;
+    color: white;
+}
+
+#modalAddDriver {
+    width: 100%;
+    height: 100%;
+    background: rgba(216, 216, 218, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    z-index: 300;
+}
+
+#modalWrapperAdd {
+    align-items: center;
+    margin: auto;
+    width: 70%;
+    border: 1px solid black;
+}
+#modalAddDriverWrapperContent{
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modalAddDriverDetails{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+#closeModalAddDriver{
+    cursor: pointer;
 }

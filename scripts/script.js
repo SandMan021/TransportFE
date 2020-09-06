@@ -144,6 +144,12 @@ document.getElementById("modalDelete").addEventListener("click", checkIfClickedM
 document.getElementById("closeModalMoreInfo").addEventListener("click", openCloseModalWindowInfo);
 document.getElementById("modalMoreInfo").addEventListener("click", checkIfClickedModalMoreInfo);
 
+/*----------Modal Add new driver--------------- */
+document.getElementById("btnAddNewDriver").addEventListener("click", openCloseModalAddDriver);
+document.getElementById("closeModalAddDriver").addEventListener("click", openCloseModalAddDriver);
+document.getElementById("modalAddDriver").addEventListener("click", checkIfClickedModalAddDriver);
+document.getElementById("btnModalCancelAddDriver").addEventListener("click", openCloseModalAddDriver);
+
 function checkIfClickedModalDelete(e) {
     if (e.target === document.getElementById("modalDelete")) {
         openCloseModalWindowDelete();
@@ -153,6 +159,12 @@ function checkIfClickedModalDelete(e) {
 function checkIfClickedModalMoreInfo(e) {
     if (e.target === document.getElementById("modalMoreInfo")) {
         openCloseModalWindowInfo();
+    }
+}
+
+function checkIfClickedModalAddDriver(e) {
+    if (e.target === document.getElementById("modalAddDriver")) {
+        openCloseModalAddDriver();
     }
 }
 
@@ -261,4 +273,8 @@ function openCloseModalWindowDelete() {
 
 function openCloseModalWindowInfo() {
     document.getElementById("modalMoreInfo").classList.toggle("PrikaziVisibility");
+}
+
+function openCloseModalAddDriver() {
+    document.getElementById("modalAddDriver").classList.toggle("PrikaziVisibility");
 }

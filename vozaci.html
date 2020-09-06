@@ -75,6 +75,9 @@
                         </tbody>
                     </table>
                 </div>
+                <div id="addDriverBTN">
+                    <button id="btnAddNewDriver">Dodaj novog vozača</button>
+                </div>
             </div>
         </div>
 
@@ -87,12 +90,6 @@
                 <img src="./img/Beli X.svg" id="zatvoriModalniDetaljnije">
             </div>
             <div id="modalDeleteWrapperContent">
-                <!-- <div>Da li ste sigurni da želite da obrišete vozača: </div>
-
-                <div id="modalDeleteButtons">
-                    <button id="btnDeleteDriver">Da</button>
-                    <button id="btnCancelDeleteDriver">Odustani od brisanja</button>
-                </div> -->
             </div>
         </div>
     </div>
@@ -104,10 +101,21 @@
                 <img src="./img/Beli X.svg" id="closeModalMoreInfo">
             </div>
             <div id="modalMoreInfoWrapperContent">
-                <!-- <div id="modalMoreInfoDriverDetails">
+            </div>
+        </div>
+    </div>
+
+    <div id="modalAddDriver">
+        <div id="modalWrapperAdd">
+            <div class="modalWrapperTop">
+                <span>Dodaj novog vozača</span>
+                <img src="./img/Beli X.svg" id="closeModalAddDriver">
+            </div>
+            <div id="modalAddDriverWrapperContent">
+                <div id="modalAddDriverDetails">
                     <div id="modalMoreInfoDriverPicture">
-                        <img src="./img/account_circle-black-18dp.svg">
-                        <button>Ubaci/promeni sliku vozača</button>
+                        <div><img src="./img/account_circle-black-18dp.svg"></div>
+                        <input id="my-file-selector" type="file" name="file">
                     </div>
                     <div id="modalMoreInfoDriverData">
                         <label>Ime:</label>
@@ -118,7 +126,7 @@
 
                         <label>Datum rodjenja:</label>
                         <input type="text">
-                        
+
                         <label>JMBG:</label>
                         <input type="text">
 
@@ -128,12 +136,11 @@
                         <label>Adresa:</label>
                         <input type="text">
                     </div>
-                </div> -->
-
-                <!-- <div id="modalMoreInfoButtons">
-                    <button id="btnModalInfoSaveChanges">Sačuvaj promene</button>
-                    <button id="btnCancelModalInfo">Odustani</button>
-                </div> -->
+                </div>
+                <div id="modalAddDriverButtons">
+                    <button>Dodaj vozača</button>
+                    <button id="btnModalCancelAddDriver">Odustani</button>
+                </div>
             </div>
         </div>
     </div>
