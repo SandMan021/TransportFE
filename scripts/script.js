@@ -149,6 +149,7 @@ document.getElementById("btnAddNewDriver").addEventListener("click", openCloseMo
 document.getElementById("closeModalAddDriver").addEventListener("click", openCloseModalAddDriver);
 document.getElementById("modalAddDriver").addEventListener("click", checkIfClickedModalAddDriver);
 document.getElementById("btnModalCancelAddDriver").addEventListener("click", openCloseModalAddDriver);
+document.getElementById("btnModalAddNewDriverToDB").addEventListener("click", createNewDriver);
 
 function checkIfClickedModalDelete(e) {
     if (e.target === document.getElementById("modalDelete")) {
@@ -189,12 +190,33 @@ function buildTable(data) {
     addListenersToMoreInfo();
 }
 
+function createNewDriver(e) {
+    let name = document.getElementById("newDriverName").value;
+    let lastName = document.getElementById("newDriverLastName").value;
+    let umcn = document.getElementById("newDriverUMCN").value;
+    let workbookNumber = document.getElementById("newDriverwoorkNumber").value;
+    let DOB = document.getElementById("newDriverDOB").value;
+    let addres = document.getElementById("newDriverAddres").value;
+    let newDriver = {
+        "name": name,
+        "lastName": lastName,
+        "umcn": umcn,
+        "workbookNumber": workbookNumber
+    }
+    console.log(newDriver);
+    axios.post("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/insertNew",
+            newDriver
+        )
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+}
+
 function showDeleteWindow(e) {
     let selectedDriver = returnDriverDataByUMCN(e.target.getAttribute("data-UMCN"));
 
     document.getElementById("modalDeleteWrapperContent").innerHTML = `
     <div id="modalDeleteContentText">Da li ste sigurni da želite da obrišete vozača: </div>
-    <div id="selectedDriverDelete">`+ selectedDriver.name + ` `+ selectedDriver.lastName +`</div>
+    <div id="selectedDriverDelete">` + selectedDriver.name + ` ` + selectedDriver.lastName + `</div>
     <div id="modalDeleteButtons">
         <button id="btnDeleteDriver" class="btnModal btnModalConfirmDelete">Obriši</button>
         <button id="btnCancelDeleteDriver" class="btnModal btnModalCancelDelete">Odustani od brisanja</button>
