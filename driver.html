@@ -54,19 +54,19 @@
 
                     <span>Odaberi kriterijum za pretragu:</span>
                     <div class="radioLabelDriver">
-                        <input type="radio" id="searchDriverByName" name="driver" value="searchDriverByName" checked>
+                        <input type="radio" id="searchDriverByName" name="driver" value="searchDriverByName" checked class="rbSearch">
                         <label for="searchDriverByName">po imenu</label>
                     </div>
                     <div class="radioLabelDriver">
-                        <input type="radio" id="searchDriverByLastName" name="driver" value="searchDriverByLastName">
+                        <input type="radio" id="searchDriverByLastName" name="driver" value="searchDriverByLastName" class="rbSearch">
                         <label for="searchDriverByLastName">po prezimenu</label>
                     </div>
                     <div class="radioLabelDriver">
-                        <input type="radio" id="searchDriverByUMCD" name="driver" value="searchDriverByUMCD">
+                        <input type="radio" id="searchDriverByUMCD" name="driver" value="searchDriverByUMCD" class="rbSearch">
                         <label for="searchDriverByUMCD">po JMBG-u</label>
                     </div>
                     <div class="radioLabelDriver">
-                        <input type="radio" id="searchDriverByWN" name="driver" value="searchDriverByWN">
+                        <input type="radio" id="searchDriverByWN" name="driver" value="searchDriverByWN" class="rbSearch">
                         <label for="searchDriverByWN">po br. radne knjižice</label>
                     </div>
                 </div>
@@ -146,13 +146,13 @@
                     </div>
                 </div>
                 <div id="modalAddDriverButtons">
-                    <button id="btnModalAddNewDriverToDB">Dodaj vozača</button>
-                    <button id="btnModalCancelAddDriver">Odustani</button>
+                    <button id="btnModalAddNewDriverToDB" class="btnModal btnModalInfoSaveChanges">Dodaj vozača</button>
+                    <button id="btnModalCancelAddDriver" class="btnModal btnModalInfoCancel">Odustani</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/driver.js"></script>
 </body>
 
 </html>

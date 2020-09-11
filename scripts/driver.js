@@ -151,6 +151,9 @@ document.getElementById("modalAddDriver").addEventListener("click", checkIfClick
 document.getElementById("btnModalCancelAddDriver").addEventListener("click", openCloseModalAddDriver);
 document.getElementById("btnModalAddNewDriverToDB").addEventListener("click", createNewDriver);
 
+
+document.getElementById("searchDriver").addEventListener("input", filterOutDriversInTable);
+
 function checkIfClickedModalDelete(e) {
     if (e.target === document.getElementById("modalDelete")) {
         openCloseModalWindowDelete();
@@ -188,6 +191,35 @@ function buildTable(data) {
 
     addListenersToDelete();
     addListenersToMoreInfo();
+}
+
+function filterOutDriversInTable(e) {
+    let inputText = e.target.value.toLowerCase();
+
+    document.getElementById("driverTableBody").innerHTML = "";
+
+    var arrayTable = [];
+    for (let item of array) {
+        let lowerName = item.name.toLowerCase();
+        if(document.getElementById("searchDriverByName").checked){
+            if (item.name.toLowerCase().includes(inputText)) {
+                arrayTable.push(item)
+             }
+        }else if(document.getElementById("searchDriverByLastName").checked){
+            if (item.lastName.toLowerCase().includes(inputText)) {
+                arrayTable.push(item)
+             }
+        }else if(document.getElementById("searchDriverByUMCD").checked){
+            if (item.umcn.toLowerCase().includes(inputText)) {
+                arrayTable.push(item)
+             }
+        }else if(document.getElementById("searchDriverByWN").checked){
+            if (item.workbookNumber.toLowerCase().includes(inputText)) {
+                arrayTable.push(item)
+             }
+        }
+    }
+    buildTable(arrayTable);
 }
 
 function createNewDriver(e) {
