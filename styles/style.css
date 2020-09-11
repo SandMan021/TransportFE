@@ -4,7 +4,8 @@
     margin: 0;
     padding: 0;
 }
-.navLink{
+
+.navLink {
     text-decoration: none;
     color: white;
     width: 100%;
@@ -17,6 +18,7 @@
     flex: 1;
     justify-content: center;
 }
+
 button {
     cursor: pointer;
 }
@@ -417,7 +419,8 @@ tr:hover {
     border: 1px solid black;
     transition: all 0.1s;
 }
-#modalAddDriverWrapperContent{
+
+#modalAddDriverWrapperContent {
     background-color: white;
     padding: 15px;
     display: flex;
@@ -425,12 +428,12 @@ tr:hover {
     align-items: center;
 }
 
-#modalAddDriverDetails{
+#modalAddDriverDetails {
     display: flex;
     margin-bottom: 50px;
 }
 
-#closeModalAddDriver{
+#closeModalAddDriver {
     cursor: pointer;
 }
 
@@ -440,19 +443,23 @@ tr:hover {
     display: block;
     margin: 40px;
 }
+
 .path {
     stroke-dasharray: 1000;
     stroke-dashoffset: 0;
 }
+
 .path.circle {
     -webkit-animation: dash 0.9s ease-in-out;
     animation: dash 0.9s ease-in-out;
 }
+
 .path.line {
     stroke-dashoffset: 1000;
     -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
     animation: dash 0.9s 0.35s ease-in-out forwards;
 }
+
 .path.check {
     stroke-dashoffset: -100;
     -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
@@ -462,37 +469,44 @@ tr:hover {
 @-webkit-keyframes dash {
     0% {
         stroke-dashoffset: 1000;
-   }
+    }
+
     100% {
         stroke-dashoffset: 0;
-   }
+    }
 }
+
 @keyframes dash {
     0% {
         stroke-dashoffset: 1000;
-   }
+    }
+
     100% {
         stroke-dashoffset: 0;
-   }
+    }
 }
+
 @-webkit-keyframes dash-check {
     0% {
         stroke-dashoffset: -100;
-   }
+    }
+
     100% {
         stroke-dashoffset: 900;
-   }
+    }
 }
+
 @keyframes dash-check {
     0% {
         stroke-dashoffset: -100;
-   }
+    }
+
     100% {
         stroke-dashoffset: 900;
-   }
+    }
 }
 
-#modalSuccess{
+#modalSuccess {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 40px;

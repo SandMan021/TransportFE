@@ -244,10 +244,8 @@ function createNewDriver(e) {
         .then(res => {
             if (res.status === 200) {
                 getDataFromDB();
-
                 showSuccessScreenOnModalNewDriver();
             }
-
         })
         .catch(err => console.log(err));
 }
@@ -325,7 +323,6 @@ function showMoreDriverInfo(e) {
             </div>
     `;
 
-
     document.getElementById("btnCancelModalInfo").addEventListener("click", openCloseModalWindowInfo);
 
     openCloseModalWindowInfo();
@@ -364,14 +361,12 @@ function showSuccessScreenOnModalDeleteDriver() {
     </div>
     <div id="modalSuccess">Vozač je obrisan iz baze podataka!</div>
     <div>
-    <button class="btnModal btnModalInfoSaveChanges" id="closeModalSuccessDeleteDriver">Zatvori</button>
+        <button class="btnModal btnModalInfoSaveChanges" id="closeModalSuccessDeleteDriver">Zatvori</button>
     </div>
     `;
     
     document.getElementById("closeModalSuccessDeleteDriver").addEventListener("click", openCloseModalWindowDelete);
     document.getElementById("modalWrapper").style.width = "50%";
-
-
 }
 
 function saveChanges(e) {
@@ -382,7 +377,6 @@ function saveChanges(e) {
 function openCloseModalWindowDelete() {
     document.getElementById("modalDelete").classList.toggle("PrikaziVisibility");
 }
-
 
 function openCloseModalWindowInfo() {
     document.getElementById("modalMoreInfo").classList.toggle("PrikaziVisibility");
