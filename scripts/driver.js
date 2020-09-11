@@ -257,18 +257,18 @@ function showSuccessScreenOnModalNewDriver() {
     wrapperContetn.innerHTML = "";
     wrapperContetn.innerHTML = `
     <div>
-    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-  </svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2" id="checkAnimation">
+        <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+        <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+        </svg>
     </div>
+    <div id="modalSuccess">Vozač je uspešno upisan u bazu podataka!</div>
     <div>
-    Vozac je uspesno unet u bazu
-    </div>
-    <div>
+    <button class="btnModal btnModalInfoSaveChanges" id="closeModalSuccessAddDriver">Zatvori</button>
     </div>
     `;
 
+    document.getElementById("closeModalSuccessAddDriver").addEventListener("click", openCloseModalAddDriver);
 }
 
 function showDeleteWindow(e) {
