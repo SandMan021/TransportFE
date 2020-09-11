@@ -271,6 +271,7 @@ tr:hover {
     margin: auto;
     width: 30%;
     border: 1px solid black;
+    transition: all 0.1s;
 }
 
 .modalWrapperTop {
@@ -414,6 +415,7 @@ tr:hover {
     margin: auto;
     width: 70%;
     border: 1px solid black;
+    transition: all 0.1s;
 }
 #modalAddDriverWrapperContent{
     background-color: white;

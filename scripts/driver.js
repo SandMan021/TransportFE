@@ -269,6 +269,7 @@ function showSuccessScreenOnModalNewDriver() {
     `;
 
     document.getElementById("closeModalSuccessAddDriver").addEventListener("click", openCloseModalAddDriver);
+    document.getElementById("modalWrapperAdd").style.width = "50%";
 }
 
 function showDeleteWindow(e) {
@@ -278,12 +279,13 @@ function showDeleteWindow(e) {
     <div id="modalDeleteContentText">Da li ste sigurni da želite da obrišete vozača: </div>
     <div id="selectedDriverDelete">` + selectedDriver.name + ` ` + selectedDriver.lastName + `</div>
     <div id="modalDeleteButtons">
-        <button id="btnDeleteDriver" class="btnModal btnModalConfirmDelete">Obriši</button>
+        <button id="btnDeleteDriver" class="btnModal btnModalConfirmDelete" data-UMCN="` + selectedDriver.umcn + `">Obriši</button>
         <button id="btnCancelDeleteDriver" class="btnModal btnModalCancelDelete">Odustani od brisanja</button>
     </div>
     `;
 
     document.getElementById("btnCancelDeleteDriver").addEventListener("click", openCloseModalWindowDelete);
+    document.getElementById("btnDeleteDriver").addEventListener("click", deleteDriverFromDB);
 
     openCloseModalWindowDelete();
 }
@@ -335,12 +337,41 @@ function returnDriverDataByUMCN(umcn) {
             return item;
         }
     }
-
 }
 
-function deleteRecord(e) {
-    //do stuff
-    openCloseModalWindowDelete();
+function deleteDriverFromDB(e) {
+    let driverUMCNDelete = e.target.getAttribute("data-UMCN");
+
+    console.log(e.target.getAttribute("data-UMCN"));
+    axios.post("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/delete/" + driverUMCNDelete)
+        .then(res => {
+            if (res.status === 200) {
+                getDataFromDB();
+                showSuccessScreenOnModalDeleteDriver();
+            }
+        })
+        .catch(err => console.log(err));
+}
+
+function showSuccessScreenOnModalDeleteDriver() {
+    document.getElementById("modalDeleteWrapperContent").innerHTML = "";
+    document.getElementById("modalDeleteWrapperContent").innerHTML = `
+    <div>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2" id="checkAnimation">
+        <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+        <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+        </svg>
+    </div>
+    <div id="modalSuccess">Vozač je obrisan iz baze podataka!</div>
+    <div>
+    <button class="btnModal btnModalInfoSaveChanges" id="closeModalSuccessDeleteDriver">Zatvori</button>
+    </div>
+    `;
+    
+    document.getElementById("closeModalSuccessDeleteDriver").addEventListener("click", openCloseModalWindowDelete);
+    document.getElementById("modalWrapper").style.width = "50%";
+
+
 }
 
 function saveChanges(e) {
