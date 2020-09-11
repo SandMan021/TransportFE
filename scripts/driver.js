@@ -111,17 +111,22 @@
 //http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/getAll
 
 var array = [];
-axios.get("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/getAll")
-    .then(res => {
-        nekiNizKojiJeStigaoSaAPIJA = res.data;
-        console.log("Ovo je stiglo", nekiNizKojiJeStigaoSaAPIJA);
-        array = nekiNizKojiJeStigaoSaAPIJA;
-        console.log(array);
-        buildTable(array);
-    })
-    .catch(err => {
-        console.log(err.response);
-    });
+window.addEventListener("load", getDataFromDB);
+
+function getDataFromDB() {
+    axios.get("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/getAll")
+        .then(res => {
+            nekiNizKojiJeStigaoSaAPIJA = res.data;
+            console.log("Ovo je stiglo", nekiNizKojiJeStigaoSaAPIJA);
+            array = nekiNizKojiJeStigaoSaAPIJA;
+            console.log(array);
+            buildTable(array);
+        })
+        .catch(err => {
+            console.log(err.response);
+        });
+}
+
 
 function addListenersToDelete() {
     let listOfDeleteButtonsInTable = document.getElementsByClassName("btnDelete");
@@ -174,7 +179,7 @@ function checkIfClickedModalAddDriver(e) {
 
 function buildTable(data) {
     var table = document.getElementById('driverTableBody');
-
+    table.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
         var row = `<tr>
             <td>` + data[i].name + `</td>
@@ -201,22 +206,22 @@ function filterOutDriversInTable(e) {
     var arrayTable = [];
     for (let item of array) {
         let lowerName = item.name.toLowerCase();
-        if(document.getElementById("searchDriverByName").checked){
+        if (document.getElementById("searchDriverByName").checked) {
             if (item.name.toLowerCase().includes(inputText)) {
                 arrayTable.push(item)
-             }
-        }else if(document.getElementById("searchDriverByLastName").checked){
+            }
+        } else if (document.getElementById("searchDriverByLastName").checked) {
             if (item.lastName.toLowerCase().includes(inputText)) {
                 arrayTable.push(item)
-             }
-        }else if(document.getElementById("searchDriverByUMCD").checked){
+            }
+        } else if (document.getElementById("searchDriverByUMCD").checked) {
             if (item.umcn.toLowerCase().includes(inputText)) {
                 arrayTable.push(item)
-             }
-        }else if(document.getElementById("searchDriverByWN").checked){
+            }
+        } else if (document.getElementById("searchDriverByWN").checked) {
             if (item.workbookNumber.toLowerCase().includes(inputText)) {
                 arrayTable.push(item)
-             }
+            }
         }
     }
     buildTable(arrayTable);
@@ -235,12 +240,35 @@ function createNewDriver(e) {
         "umcn": umcn,
         "workbookNumber": workbookNumber
     }
-    console.log(newDriver);
-    axios.post("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/insertNew",
-            newDriver
-        )
-        .then(res => console.log(res))
+    axios.post("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/insertNew", newDriver)
+        .then(res => {
+            if (res.status === 200) {
+                getDataFromDB();
+
+                showSuccessScreenOnModalNewDriver();
+            }
+
+        })
         .catch(err => console.log(err));
+}
+
+function showSuccessScreenOnModalNewDriver() {
+    let wrapperContetn = document.getElementById("modalAddDriverWrapperContent");
+    wrapperContetn.innerHTML = "";
+    wrapperContetn.innerHTML = `
+    <div>
+    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+  </svg>
+    </div>
+    <div>
+    Vozac je uspesno unet u bazu
+    </div>
+    <div>
+    </div>
+    `;
+
 }
 
 function showDeleteWindow(e) {
