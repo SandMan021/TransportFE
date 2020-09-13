@@ -205,26 +205,29 @@ function filterOutDriversInTable(e) {
 
     var arrayTable = [];
     for (let item of array) {
-        let lowerName = item.name.toLowerCase();
         if (document.getElementById("searchDriverByName").checked) {
-            if (item.name.toLowerCase().includes(inputText)) {
+            if (returnLowerText(item.name).includes(inputText)) {
                 arrayTable.push(item)
             }
         } else if (document.getElementById("searchDriverByLastName").checked) {
-            if (item.lastName.toLowerCase().includes(inputText)) {
+            if (returnLowerText(item.lastName).includes(inputText)) {
                 arrayTable.push(item)
             }
         } else if (document.getElementById("searchDriverByUMCD").checked) {
-            if (item.umcn.toLowerCase().includes(inputText)) {
+            if (returnLowerText(item.umcn).includes(inputText)) {
                 arrayTable.push(item)
             }
         } else if (document.getElementById("searchDriverByWN").checked) {
-            if (item.workbookNumber.toLowerCase().includes(inputText)) {
+            if (returnLowerText(item.workbookNumber).includes(inputText)) {
                 arrayTable.push(item)
             }
         }
     }
     buildTable(arrayTable);
+}
+
+function returnLowerText(text) {
+    return text.toLowerCase();
 }
 
 function createNewDriver(e) {
@@ -364,7 +367,7 @@ function showSuccessScreenOnModalDeleteDriver() {
         <button class="btnModal btnModalInfoSaveChanges" id="closeModalSuccessDeleteDriver">Zatvori</button>
     </div>
     `;
-    
+
     document.getElementById("closeModalSuccessDeleteDriver").addEventListener("click", openCloseModalWindowDelete);
     document.getElementById("modalWrapper").style.width = "50%";
 }
