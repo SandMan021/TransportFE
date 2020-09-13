@@ -255,7 +255,6 @@ function createNewDriver(e) {
 
 function showSuccessScreenOnModalNewDriver() {
     let wrapperContetn = document.getElementById("modalAddDriverWrapperContent");
-    wrapperContetn.innerHTML = "";
     wrapperContetn.innerHTML = `
     <div>
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2" id="checkAnimation">
@@ -269,8 +268,46 @@ function showSuccessScreenOnModalNewDriver() {
     </div>
     `;
 
-    document.getElementById("closeModalSuccessAddDriver").addEventListener("click", openCloseModalAddDriver);
+    document.getElementById("closeModalSuccessAddDriver").addEventListener("click", closeModalSuccessAddDriverReturnBackOldHTML);
     document.getElementById("modalWrapperAdd").style.width = "50%";
+}
+
+function closeModalSuccessAddDriverReturnBackOldHTML() {
+    openCloseModalAddDriver();
+    let wrapperContetn = document.getElementById("modalAddDriverWrapperContent");
+    wrapperContetn.innerHTML = ` 
+        <div id="modalAddDriverDetails">
+        <div id="modalMoreInfoDriverPicture">
+            <div><img src="./img/account_circle-black-18dp.svg"></div>
+            <input id="my-file-selector" type="file" name="file">
+        </div>
+        <div id="modalMoreInfoDriverData">
+            <label>Ime:</label>
+            <input type="text" id="newDriverName">
+
+            <label>Prezime:</label>
+            <input type="text" id="newDriverLastName">
+
+            <label>Datum rodjenja:</label>
+            <input type="text" id="newDriverDOB">
+
+            <label>JMBG:</label>
+            <input type="text" id="newDriverUMCN">
+
+            <label>Broj radne knjižice:</label>
+            <input type="text" id="newDriverwoorkNumber">
+
+            <label>Adresa:</label>
+            <input type="text" id="newDriverAddres">
+        </div>
+    </div>
+    <div id="modalAddDriverButtons">
+        <button id="btnModalAddNewDriverToDB" class="btnModal btnModalInfoSaveChanges">Dodaj vozača</button>
+        <button id="btnModalCancelAddDriver" class="btnModal btnModalInfoCancel">Odustani</button>
+    </div>`;
+    document.getElementById("modalWrapperAdd").style.width = "70%";
+    document.getElementById("btnModalCancelAddDriver").addEventListener("click", openCloseModalAddDriver);
+    document.getElementById("btnModalAddNewDriverToDB").addEventListener("click", createNewDriver);
 }
 
 function showDeleteWindow(e) {
