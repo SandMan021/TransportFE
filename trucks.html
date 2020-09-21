@@ -78,8 +78,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="addDriverBTN">
-                    <button id="btnAddNewDriver">Dodaj novi kamion</button>
+                <div id="addTruckBTN">
+                    <button id="btnAddNewTruck">Dodaj novi kamion</button>
                 </div>
             </div>
         </div>
@@ -107,7 +107,47 @@
         </div>
     </div>
 
+    <div id="modalAddTruck">
+        <div id="modalWrapperAdd">
+            <div class="modalWrapperTop">
+                <span>Dodaj novi kamion</span>
+                <img src="./img/Beli X.svg" id="closeModalAddTruck">
+            </div>
+            <div id="modalAddDriverWrapperContent">
+                <div id="modalAddDriverDetails">
+                    <div id="modalMoreInfoDriverData">
+                        <label>Registarske oznake:</label>
+                        <input type="text" id="registrationNumber">
 
+                        <label>Broj šasije:</label>
+                        <input type="text" id="chassisNumber">
+
+                        <label>Boja:</label>
+                        <input type="text" id="truckColor">
+                        
+                        <label>Proizvođač:</label>
+                        <input type="text" id="manufacturersName">
+
+                        <label>Model:</label>
+                        <input type="text" id="model">
+
+                        <label>Snaga u kW:</label>
+                        <input type="text" id="truckPowerKW">
+
+                        <label>Snaga u KS:</label>
+                        <input type="text" id="truckPowerHP">
+
+                        <label>Zapremina motora:</label>
+                        <input type="text" id="truckEngineSize">
+                    </div>
+                </div>
+                <div id="modalAddDriverButtons">
+                    <button id="btnModalAddNewTruckToDB" class="btnModal btnModalInfoSaveChanges">Dodaj kamion</button>
+                    <button id="btnModalCancelAddTruck" class="btnModal btnModalInfoCancel">Odustani</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./scripts/trucks.js"></script>
 </body>
 

@@ -520,3 +520,37 @@ tr:hover {
     height: 30px;
     margin-right: 15px;
 }
+#modalAddTruck{
+    width: 100%;
+    height: 100%;
+    background: rgba(216, 216, 218, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    z-index: 300;
+}
+#closeModalAddTruck{
+    cursor: pointer;
+}
+
+#btnAddNewTruck {
+    background-color: white;
+    border: 1px solid #222831;
+    color: #222831;
+    margin-right: 10px;
+    padding: 14px 40px;
+    transition: 0.3s;
+}
+
+#btnAddNewTruck:hover {
+    background-color: #222831;
+    color: white;
+}
+#addTruckBTN {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
