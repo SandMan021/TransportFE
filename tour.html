@@ -47,8 +47,45 @@
                     </div>
                 </a>
             </div>
+            <div class="content">
+                <div class="tableInputFields">
+                    <input type="text" placeholder="Unesite pojam za pretragu" id="searchTrucks">
+
+                    <span>Odaberi kriterijum za pretragu:</span>
+                    <div class="radioLabelDriver">
+                        <input type="radio" id="searchTrucksByREG" name="trucks" value="searchTrucksByREG" checked
+                            class="rbSearch">
+                        <label for="searchTrucksByREG">po registarskom broju</label>
+                    </div>
+                    <div class="radioLabelDriver">
+                        <input type="radio" id="searchTrucksByVIN" name="trucks" value="searchTrucksByVIN"
+                            class="rbSearch">
+                        <label for="searchTrucksByVIN">po broju šasije</label>
+                    </div>
+                </div>
+                <div id="tableWrapper">
+                    <table id="driverTable">
+                        <thead>
+                            <tr id="driverTableHead">
+                                <th>Status</th>
+                                <th>Mesto polaska</th>
+                                <th>Mesto dolaska</th>
+                                <th>Datum polaska</th>
+                                <th>Datum dolaska</th>
+                                <th>Uredi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="driverTableBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div id="addTruckBTN">
+                    <button id="btnAddNewTruck">Dodaj novi kamion</button>
+                </div>
+            </div>
         </div>
     </div>
+    <script src="./scripts/tour.js"></script>
 </body>
 
 </html>

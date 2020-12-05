@@ -4,9 +4,7 @@ function loadTruckDataFromDB() {
     axios.get("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/trucks/getAll")
         .then(res => {
             nekiNizKojiJeStigaoSaAPIJA = res.data;
-            console.log("Ovo je stiglo", nekiNizKojiJeStigaoSaAPIJA);
             array = nekiNizKojiJeStigaoSaAPIJA;
-            console.log(array);
             buildTable(array);
         })
         .catch(err => {

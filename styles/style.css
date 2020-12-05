@@ -382,7 +382,7 @@ tr:hover {
 #addDriverBTN {
     display: flex;
     justify-content: flex-end;
-    margin-top: 30px;
+    margin-top: auto;
 }
 
 #btnAddNewDriver {
@@ -552,5 +552,5 @@ tr:hover {
 #addTruckBTN {
     display: flex;
     justify-content: flex-end;
-    margin-top: 30px;
+    margin-top: auto;
 }
