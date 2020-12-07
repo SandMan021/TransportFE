@@ -16,10 +16,10 @@ function loadTourDataFromDB() {
 
 /*----------Modal Add new truck--------------- */
 document.getElementById("btnAddNewTour").addEventListener("click", openCloseModalAddTour);
-document.getElementById("closeModalAddTruck").addEventListener("click", openCloseModalAddTour);
-document.getElementById("modalAddTruck").addEventListener("click", checkIfClickedModalAddTruck);
-document.getElementById("btnModalCancelAddTruck").addEventListener("click", openCloseModalAddTour);
-document.getElementById("btnModalAddNewTruckToDB").addEventListener("click", createNewTruck);
+document.getElementById("closeModalAddTour").addEventListener("click", openCloseModalAddTour);
+document.getElementById("modalAddTour").addEventListener("click", checkIfClickedModalAddTour);
+document.getElementById("btnModalCancelAddTour").addEventListener("click", openCloseModalAddTour);
+//document.getElementById("btnModalAddNewTruckToDB").addEventListener("click", createNewTruck);
 
 function buildTable(data) {
     var table = document.getElementById('driverTableBody');
@@ -35,8 +35,8 @@ function buildTable(data) {
                 <td>` + dateDeparture.toLocaleDateString() + `</td>
                 <td>` + dateArrival.toLocaleDateString() + `</td>
                 <td>
-                <button class="btnTable btnMoreInfo" data-VIN="` + data[i].chassisNumber + `">Detaljnije / Uredi</button>
-                <button class="btnTable btnDelete" data-VIN="` + data[i].chassisNumber + `">Obriši</button></td>
+                <button class="btnTable btnMoreInfo" data-TOURID="` + data[i].id + `">Detaljnije / Uredi</button>
+                <button class="btnTable btnDelete" data-TOURID="` + data[i].id + `">Obriši</button></td>
                 </tr>`;
 
         table.innerHTML += row;
@@ -47,4 +47,9 @@ function buildTable(data) {
 
 function openCloseModalAddTour() {
     document.getElementById("modalAddTour").classList.toggle("PrikaziVisibility");
+}
+function checkIfClickedModalAddTour(e) {
+    if (e.target === document.getElementById("modalAddTour")) {
+        openCloseModalAddTour();
+    }
 }
