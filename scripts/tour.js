@@ -14,6 +14,13 @@ function loadTourDataFromDB() {
         });
 }
 
+/*----------Modal Add new truck--------------- */
+document.getElementById("btnAddNewTour").addEventListener("click", openCloseModalAddTour);
+document.getElementById("closeModalAddTruck").addEventListener("click", openCloseModalAddTour);
+document.getElementById("modalAddTruck").addEventListener("click", checkIfClickedModalAddTruck);
+document.getElementById("btnModalCancelAddTruck").addEventListener("click", openCloseModalAddTour);
+document.getElementById("btnModalAddNewTruckToDB").addEventListener("click", createNewTruck);
+
 function buildTable(data) {
     var table = document.getElementById('driverTableBody');
     table.innerHTML = "";
@@ -36,4 +43,8 @@ function buildTable(data) {
     }
     addListenersToDelete();
     addListenersToMoreInfo();
+}
+
+function openCloseModalAddTour() {
+    document.getElementById("modalAddTour").classList.toggle("PrikaziVisibility");
 }

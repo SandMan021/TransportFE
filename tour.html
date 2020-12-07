@@ -79,8 +79,198 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="addTruckBTN">
-                    <button id="btnAddNewTruck">Dodaj novi kamion</button>
+                <div id="addTourBTN">
+                    <button id="btnAddNewTour">Dodaj novu turu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalAddTour">
+        <div id="modalWrapperAdd">
+            <div class="modalWrapperTop">
+                <span>Dodaj novu turu</span>
+                <img src="./img/Beli X.svg" id="closeModalAddTour">
+            </div>
+            <div id="modalAddTourWrapperContent">
+                <div id="modalAddTourCards">
+                    <div id="modalSelectDriverTour" class="modalTourDataDiff">
+                        <div class="modalTourCardHeading">Podaci o vozaču:</div>
+                        <div class="modalTourSpecificData">
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Vozač:</label>
+                                <select>
+                                    <option value="volvo">Marko Markovic</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>JMBG:</label>
+                                <input type="text" value="1234567895423" readonly disabled>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Broj pasoša:</label>
+                                <input type="text" value="SRB1234567895423" readonly disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="modalSelectTruckTour" class="modalTourDataDiff">
+                        <div class="modalTourCardHeading">Podaci o kamionu:</div>
+                        <div class="modalTourSpecificData">
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Registarske oznake:</label>
+                                <select>
+                                    <option value="saab">NS-123-FG</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Datum registracije:</label>
+                                <input type="text" value="22.11.2020." readonly disabled>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Broj šasije:</label>
+                                <input type="text" value="548asdfasdf12" readonly disabled>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Proizvođač:</label>
+                                <input type="text" value="Man" readonly disabled>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Model:</label>
+                                <input type="text" value="Traveler" readonly disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modalSelectTruckTour" class="modalTourDataDiff">
+                        <div class="modalTourCardHeading">Podaci o prikolici:</div>
+                        <div class="modalTourSpecificData">
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Tip:</label>
+                                <select>
+                                    <option value="saab">Cisterna</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Datum registracije:</label>
+                                <input type="text" value="22.11.2020." readonly disabled>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Proizvođač:</label>
+                                <input type="text" value="Man" readonly disabled>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Model:</label>
+                                <input type="text" value="Traveler" readonly disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modalAddTourDetails" class="modalTourDataDiff">
+                        <div class="modalTourCardHeading">Podaci o turi:</div>
+                        <div class="modalTourSpecificData">
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Datum polaska:</label>
+                                <input type="date">
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Drzava polaska:</label>
+                                <select>
+                                    <option value="saab">Srbija</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Grad polaska:</label>
+                                <select>
+                                    <option value="saab">Novi Sad</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Ulica:</label>
+                                <input type="text">
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Datum dolaska:</label>
+                                <input type="date">
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Drzava dolaska:</label>
+                                <select>
+                                    <option value="saab">Srbija</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Grad dolaska:</label>
+                                <select>
+                                    <option value="saab">Novi Sad</option>
+                                    <option value="fiat">Fiat</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+                            <div class="modalTourSpecificDataLabelInputWrapper">
+                                <label>Ulica:</label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <!-- [
+                    {
+                        "driver": {
+                            "id": null,
+                            "name": "Marija",
+                            "lastName": "Simic",
+                            "umcn": "1254895698754",
+                            "workbookNumber": "64584856121"
+                        },
+                        "truck": {
+                            "id": null,
+                            "manufacturersName": "AlfaRome",
+                            "model": "Punto",
+                            "registrationNumber": "NS-123-FG",
+                            "chassisNumber": "548asdfasdf12",
+                            "registrationDate": "2020-01-18T23:06:00.000+00:00"
+                        },
+                        "trailer": {
+                            "id": null,
+                            "manufacturersName": "Prikolica",
+                            "model": "slepa",
+                            "type": null,
+                            "registrationDate": "2020-06-19"
+                        },
+                        "placeOfDeparture": {
+                            "zipCode": 21000,
+                            "country": "Serbia",
+                            "city": "Novi Sad",
+                            "street": "Cirpanova"
+                        },
+                        "placeOfArrival": {
+                            "zipCode": 21000,
+                            "city": "Novi Sad",
+                            "country": "Serbia",
+                            "street": "Cirpanova"
+                        },
+                        "dateOfArrival": "2019-12-31T23:01:00.000+00:00",
+                        "dateOfDeparture": "2020-01-01T22:12:15.000+00:00",
+                        "status": "Aktivna"
+                    }
+                ] -->
+                    </div>
+                </div>
+                <div id="modalAddDriverButtons">
+                    <button id="btnModalAddNewTruckToDB" class="btnModal btnModalInfoSaveChanges">Dodaj novu
+                        turu</button>
+                    <button id="btnModalCancelAddTruck" class="btnModal btnModalInfoCancel">Odustani</button>
                 </div>
             </div>
         </div>
