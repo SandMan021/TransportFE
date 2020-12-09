@@ -47,9 +47,122 @@ function buildTable(data) {
 
 function openCloseModalAddTour() {
     document.getElementById("modalAddTour").classList.toggle("PrikaziVisibility");
+    fillDataOnModalAddNewTour();
 }
+
 function checkIfClickedModalAddTour(e) {
     if (e.target === document.getElementById("modalAddTour")) {
         openCloseModalAddTour();
+    }
+}
+
+function fillDataOnModalAddNewTour() {
+    if (document.getElementById("newTourDriverNameDD").options.length === 0) {
+        getDriversFromDB();
+    }
+    if (document.getElementById("newTourTruckRegistrationNumberDD").options.length === 0) {
+        getTrucksFromDB();
+    }
+}
+
+function getDriversFromDB() {
+    axios.get("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/driver/getAll")
+        .then(res => {
+            resArray = res.data;
+            console.log("Ovo je stiglo od vozaca", resArray);
+            driverArray = resArray;
+            console.log(driverArray);
+            addDriverDataNewTour(driverArray);
+        })
+        .catch(err => {
+            console.log(err.response);
+        });
+}
+
+function addDriverDataNewTour(driverArray) {
+    const driverDD = document.getElementById("newTourDriverNameDD");
+
+    for (item of driverArray) {
+        let option = document.createElement("option");
+        option.value = item.umcn;
+        option.innerHTML = item.name + " " + item.lastName;
+        driverDD.appendChild(option);
+    }
+
+    updateDriverDisplayData();
+
+    driverDD.addEventListener("change", updateDriverDisplayData);
+}
+
+function updateDriverDisplayData() {
+    const driverDD = document.getElementById("newTourDriverNameDD");
+    const driverUMCN = document.getElementById("newTourDriverUMCN");
+    const driverPassport = document.getElementById("newTourDriverPassport");
+
+    driverUMCN.value = driverDD.value;
+    driver = returnDriverDataByUMCN(driverDD.value)
+    driverPassport.value = driver.workbookNumber;
+}
+
+function returnDriverDataByUMCN(umcn) {
+    for (item of driverArray) {
+        if (item.umcn === umcn) {
+            return item;
+        }
+    }
+}
+
+function getTrucksFromDB() {
+    axios.get("http://3.21.92.112:8080/TransportPall-0.0.1-SNAPSHOT/transportPal/trucks/getAll")
+        .then(res => {
+            resArray = res.data;
+            console.log("Ovo je stiglo od kamiona", resArray);
+            truckArray = resArray;
+            console.log(truckArray);
+            addTruckDataNewTour(truckArray);
+        })
+        .catch(err => {
+            console.log(err.response);
+        });
+}
+
+function addTruckDataNewTour(truckArray) {
+    const truckDD = document.getElementById("newTourTruckRegistrationNumberDD");
+
+    for (item of truckArray) {
+        let option = document.createElement("option");
+        option.value = item.chassisNumber;
+        option.innerHTML = item.registrationNumber;
+        truckDD.appendChild(option);
+    }
+
+    updateTruckDisplayData();
+
+    truckDD.addEventListener("change", updateTruckDisplayData);
+}
+
+function updateTruckDisplayData() {
+    const truckDD = document.getElementById("newTourTruckRegistrationNumberDD");
+    const truckRegistrationDate = document.getElementById("newTourTruckRegistrationDate");
+    const truckVIN = document.getElementById("newTourTruckVIN");
+    const truckManufacturer = document.getElementById("newTourTruckManufacturer");
+    const truckModel = document.getElementById("newTourTruckModel");
+
+    truckObject = returnTruckDataByVIN(truckDD.value);
+
+    let registrationDate= new Date(truckObject.registrationDate);
+
+    truckRegistrationDate.value = registrationDate.toLocaleDateString();
+    truckVIN.value = truckObject.chassisNumber;
+    truckManufacturer.value = truckObject.manufacturersName;
+    truckModel.value = truckObject.model;
+
+}
+
+function returnTruckDataByVIN(vin) {
+    for (item of truckArray) {
+        if (item.chassisNumber === vin) {
+            return item;
+        }
     }
 }

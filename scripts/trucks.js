@@ -38,6 +38,7 @@ function buildTable(data) {
                 <td>` + data[i].chassisNumber + `</td>
                 <td>` + data[i].manufacturersName + `</td>
                 <td>` + date.getDay() + `.` + date.getMonth() + `.` + date.getFullYear() + `</td>
+                <td>` + data[i].manufacturersName + `</td>
                 <td>
                 <button class="btnTable btnMoreInfo" data-VIN="` + data[i].chassisNumber + `">Detaljnije / Uredi</button>
                 <button class="btnTable btnDelete" data-VIN="` + data[i].chassisNumber + `">Obriši</button></td>

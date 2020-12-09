@@ -74,6 +74,8 @@ function buildTable(data) {
             <td>` + data[i].lastName + `</td>
             <td>` + data[i].umcn + `</td>
             <td>` + data[i].workbookNumber + `</td>
+            <td>` + data[i].workbookNumber + `</td>
+            <td>` + data[i].workbookNumber + `</td>
             <td>
             <button class="btnTable btnMoreInfo" data-UMCN="` + data[i].umcn + `">Detaljnije / Uredi</button>
             <button class="btnTable btnDelete" data-UMCN="` + data[i].umcn + `">Obriši</button></td>
