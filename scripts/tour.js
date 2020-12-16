@@ -21,6 +21,9 @@ document.getElementById("modalAddTour").addEventListener("click", checkIfClicked
 document.getElementById("btnModalCancelAddTour").addEventListener("click", openCloseModalAddTour);
 //document.getElementById("btnModalAddNewTruckToDB").addEventListener("click", createNewTruck);
 
+document.getElementById("zatvoriModalniDetaljnije").addEventListener("click", openCloseModalWindowDelete);
+document.getElementById("modalDelete").addEventListener("click", checkIfClickedModalDelete);
+
 function buildTable(data) {
     var table = document.getElementById('driverTableBody');
     table.innerHTML = "";
@@ -45,6 +48,37 @@ function buildTable(data) {
     addListenersToMoreInfo();
 }
 
+function addListenersToDelete() {
+    let listOfDeleteButtonsInTable = document.getElementsByClassName("btnDelete");
+    for (let i = 0; i < listOfDeleteButtonsInTable.length; i++) {
+        listOfDeleteButtonsInTable[i].addEventListener("click", showDeleteWindow);
+    }
+}
+
+function addListenersToMoreInfo() {
+    let listOfMoreInfoButtonsInTable = document.getElementsByClassName("btnMoreInfo");
+    for (let i = 0; i < listOfMoreInfoButtonsInTable.length; i++) {
+        listOfMoreInfoButtonsInTable[i].addEventListener("click", showMoreInfoTrucks);
+    }
+}
+
+function showDeleteWindow(e) {
+    //let selectedTruck = returnTruckDataByVIN(e.target.getAttribute("data-TOURID"));
+
+    document.getElementById("modalDeleteWrapperContent").innerHTML = `
+    <div id="modalDeleteContentTextTour">Da li ste sigurni da želite da obrišete turu?</div>
+    <div id="modalDeleteButtons">
+        <button id="btnDeleteDriver" class="btnModal btnModalConfirmDelete" data-VIN="">Obriši</button>
+        <button id="btnCancelDeleteDriver" class="btnModal btnModalCancelDelete" data-VIN="">Odustani</button>
+    </div>
+    `;
+
+    document.getElementById("btnCancelDeleteDriver").addEventListener("click", openCloseModalWindowDelete);
+    //document.getElementById("btnDeleteDriver").addEventListener("click", deleteTruckFromDB);
+
+    openCloseModalWindowDelete();
+}
+
 function openCloseModalAddTour() {
     document.getElementById("modalAddTour").classList.toggle("PrikaziVisibility");
     fillDataOnModalAddNewTour();
@@ -53,6 +87,12 @@ function openCloseModalAddTour() {
 function checkIfClickedModalAddTour(e) {
     if (e.target === document.getElementById("modalAddTour")) {
         openCloseModalAddTour();
+    }
+}
+
+function checkIfClickedModalDelete(e) {
+    if (e.target === document.getElementById("modalDelete")) {
+        openCloseModalWindowDelete();
     }
 }
 
@@ -157,6 +197,9 @@ function updateTruckDisplayData() {
     truckManufacturer.value = truckObject.manufacturersName;
     truckModel.value = truckObject.model;
 
+}
+function openCloseModalWindowDelete() {
+    document.getElementById("modalDelete").classList.toggle("PrikaziVisibility");
 }
 
 function returnTruckDataByVIN(vin) {
