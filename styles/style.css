@@ -19,6 +19,17 @@
     justify-content: center;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 button {
     cursor: pointer;
 }
@@ -39,11 +50,28 @@ body {
 #fixedHeader {
     top: 0;
     left: 0;
-    width: 100%;
-    height: 70px;
+    min-height: 7%;
     background: rgb(38, 41, 46);
     background: linear-gradient(90deg, rgba(38, 41, 46, 1) 11%, rgba(34, 40, 49, 1) 55%, rgba(57, 62, 70, 1) 89%);
     display: flex;
+}
+
+#fixedHeader_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    margin: 0;
+}
+
+#fixedHeader_img>img {
+    height: 70%;
+    cursor: pointer;
+
+}
+
+#openMenu {
+    display: none;
 }
 
 #fixedHeader_text {
@@ -61,11 +89,13 @@ body {
 
 #sideBar {
     width: 120px;
+    min-height: 93%;
     background-color: #393E46;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
-
+    transition: all 0.5s;
+    /* display: none; */
 }
 
 .sideBarItem {
@@ -79,6 +109,7 @@ body {
     cursor: pointer;
     flex: 1;
     justify-content: center;
+    padding: 15px !important;
 }
 
 .sideBarItem div {
@@ -98,10 +129,12 @@ body {
     background-color: #00ADB5;
 }
 
+
 /*----------------------------CONTENT----------------------------*/
 .content {
     background-color: #F5F5F5;
     flex: 1;
+    min-height: 93% !important;
     display: flex;
     flex-direction: column;
     padding: 25px;
@@ -122,6 +155,9 @@ body {
     width: 250px;
     height: 30px;
     margin-right: 15px;
+    border: none;
+    border: solid 1px #ccc;
+    border-radius: 8px;
 }
 
 .radioLabelDriver {
@@ -136,12 +172,13 @@ body {
     margin-left: 15px;
 }
 
-/*----------------------------TABlE----------------------------*/
+/*----------------------------TABLE----------------------------*/
 #tableWrapper {
     display: flex;
-    height: 500px;
+    max-height: 75%;
     overflow: auto;
     width: 100%;
+    /* padding-bottom: 500px; */
 }
 
 #driverTable {
@@ -149,25 +186,22 @@ body {
 }
 
 #driverTable,
-tr,
-td,
-th {
-    border: 2px solid #222831;
+td {
     border-collapse: collapse;
     text-align: center;
-    font-size: 18px;
 }
+
 
 #driverTable td,
 th {
-    padding: 10px 25px;
+    padding: 10px 10px;
 }
 
 th {
     background: #222831;
     position: sticky;
-    top: -2px;
-    height: 25px;
+    top: -1px;
+    height: auto;
 }
 
 tr:nth-child(even) {
@@ -189,15 +223,14 @@ tr:hover {
 }
 
 .btnTable {
-    margin: 0px 5px;
-    /* padding: 8px 20px; */
+    margin: 0px 10px;
+    padding: 5px 18px;
     background-color: white;
     border: 1px solid #00ADB5;
     color: #00ADB5;
-
+    cursor: pointer;
     transition-duration: 0.3s;
-    width: 50%;
-    height: 40px;
+    border-radius: 8px;
 }
 
 .btnTable:hover {
@@ -255,6 +288,7 @@ tr:hover {
     margin: 0 10px;
     padding: 12px 28px;
     font-size: 15px;
+    border-radius: 8px;
 }
 
 .btnModalConfirmDelete {
@@ -263,9 +297,18 @@ tr:hover {
     background-color: #F44336;
 }
 
+.btnModalConfirmDelete:hover {
+    background-color: #A22C24;
+}
+
 .btnModalCancelDelete {
     color: #00ADB5;
     border: 1px solid #00ADB5;
+}
+
+.btnModalCancelDelete:hover {
+    color: white;
+    background-color: #00ADB5;
 }
 
 #modalWrapper {
@@ -338,8 +381,23 @@ tr:hover {
 }
 
 #modalMoreInfoDriverPicture div>img {
-    width: 250px;
+    width: 300px;
     object-fit: contain;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    display: none;
+}
+
+.custom-file-input::before {
+    content: 'Izaberite sliku';
+    display: inline-block;
+    background: #00ADB5;
+    border-radius: 3px;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: white;
+    margin-right: 15px;
 }
 
 #modalMoreInfoWrapperContent {
@@ -366,11 +424,18 @@ tr:hover {
 #modalMoreInfoDriverData {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .btnModalInfoCancel {
     border: 1px solid #F44336;
     color: #F44336;
+}
+
+.btnModalInfoCancel:hover {
+    background-color: #F44336;
+    border: 1px solid #F44336;
+    color: white;
 }
 
 .btnModalInfoSaveChanges {
@@ -379,15 +444,22 @@ tr:hover {
     color: white;
 }
 
+.btnModalInfoSaveChanges:hover {
+    background-color: #007378;
+    border: 1px solid #007378;
+}
+
 #addDriverBTN {
     display: flex;
     justify-content: flex-end;
-    margin-top: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 #btnAddNewDriver {
     background-color: white;
     border: 1px solid #222831;
+    border-radius: 8px;
     color: #222831;
     margin-right: 10px;
     padding: 14px 40px;
@@ -417,7 +489,6 @@ tr:hover {
     margin: auto;
     width: 70%;
     border: 1px solid black;
-    transition: all 0.1s;
 }
 
 #modalAddDriverWrapperContent {
@@ -505,6 +576,7 @@ tr:hover {
         stroke-dashoffset: 900;
     }
 }
+
 
 #modalSuccess {
     font-size: 30px;
@@ -598,7 +670,8 @@ tr:hover {
     border: 1px solid #393E46;
     border-radius: 20px;
 }
-#modalSelectDriverTour{
+
+#modalSelectDriverTour {
     background-color: white;
     padding: 15px;
     display: flex;
@@ -607,17 +680,20 @@ tr:hover {
     border: 1px solid #393E46;
     border-radius: 20px;
 }
-.modalTourDataDiff{
+
+.modalTourDataDiff {
     display: flex !important;
     flex-direction: column !important;
     margin: 0 15px;
     padding: 15px !important;
 }
-.modalTourSpecificData{
+
+.modalTourSpecificData {
     display: flex !important;
     flex-direction: column !important;
 }
-#modalSelectTruckTour{
+
+#modalSelectTruckTour {
     background-color: white;
     padding: 15px;
     display: flex;
@@ -626,22 +702,26 @@ tr:hover {
     border: 1px solid #393E46;
     border-radius: 20px;
 }
-#modalAddTourCards{
+
+#modalAddTourCards {
     display: flex;
     margin-bottom: 50px;
 }
-.modalTourCardHeading{
+
+.modalTourCardHeading {
     font-size: 1.2rem;
     margin-bottom: 15px;
     font-weight: bold;
     align-self: flex-start;
 }
-.modalTourSpecificDataLabelInputWrapper{
+
+.modalTourSpecificDataLabelInputWrapper {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
-#modalAddTour{
+
+#modalAddTour {
     width: 100%;
     height: 100%;
     background: rgba(216, 216, 218, .5);
@@ -653,13 +733,16 @@ tr:hover {
     visibility: hidden;
     z-index: 300;
 }
-#closeModalAddTour{
+
+#closeModalAddTour {
     cursor: pointer;
 }
-.modalDeleteTour{
+
+.modalDeleteTour {
     width: 50% !important;
 }
-#modalDeleteContentTextTour{
+
+#modalDeleteContentTextTour {
     font-size: 32px;
     font-weight: bold;
     margin: 20px 0;

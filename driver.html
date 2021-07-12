@@ -13,6 +13,11 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <div id="wrapper">
         <div id="fixedHeader">
+            <div id="fixedHeader_img">
+                <img src="./img/menu_open_white_24dp.svg" id="closeMenu" >
+                <img src="./img/menu_white_24dp.svg" id="openMenu" >
+            </div>
+            
             <div id="fixedHeader_text">Kovačević Transport</div>
         </div>
         <div id="contentWrapper">
@@ -47,10 +52,11 @@
                         <div>Osiguranja</div>
                     </div>
                 </a>
+
             </div>
             <div class="content">
                 <div class="tableInputFields">
-                    <input type="text" placeholder="Unesite pojam za pretragu" id="searchDriver">
+                    <input type="text" placeholder="   Unesite pojam za pretragu" id="searchDriver">
 
                     <span>Odaberi kriterijum za pretragu:</span>
                     <div class="radioLabelDriver">
@@ -71,7 +77,7 @@
                     <div class="radioLabelDriver">
                         <input type="radio" id="searchDriverByWN" name="driver" value="searchDriverByWN"
                             class="rbSearch">
-                        <label for="searchDriverByWN">po br. radne knjižice</label>
+                        <label for="searchDriverByWN">po broju ugovora o radu</label>
                     </div>
                 </div>
                 <div id="tableWrapper">
@@ -83,8 +89,8 @@
                                 <th>JMBG</th>
                                 <th>Broj pasoša</th>
                                 <th>Broj lične karte</th>
-                                <th>Ugovor o radu</th>
-                                <th>Uredi</th>
+                                <th>Broj ugovora o radu</th>
+                                <th>Opcije</th>
                             </tr>
                         </thead>
                         <tbody id="driverTableBody">
@@ -128,8 +134,9 @@
             <div id="modalAddDriverWrapperContent">
                 <div id="modalAddDriverDetails">
                     <div id="modalMoreInfoDriverPicture">
-                        <div><img src="./img/account_circle-black-18dp.svg"></div>
-                        <input id="my-file-selector" type="file" name="file">
+                        <div><img src="./img/account_circle-black-18dp.svg" id="output"></div>
+                        <input id="file" type="file" name="file" accept="image/*" class="custom-file-input"
+                            onchange="loadFile(event)">
                     </div>
                     <div id="modalMoreInfoDriverData">
                         <label>Ime:</label>
@@ -138,17 +145,18 @@
                         <label>Prezime:</label>
                         <input type="text" id="newDriverLastName">
 
-                        <label>Datum rodjenja:</label>
-                        <input type="text" id="newDriverDOB">
-
                         <label>JMBG:</label>
-                        <input type="text" id="newDriverUMCN">
+                        <input type="number" maxlength="13" id="newDriverUMCN">
 
-                        <label>Broj radne knjižice:</label>
-                        <input type="text" id="newDriverwoorkNumber">
+                        <label>Broj pasoša:</label>
+                        <input type="number" id="newDriverPassportNumber">
 
-                        <label>Adresa:</label>
-                        <input type="text" id="newDriverAddres">
+                        <label>Broj lične karte:</label>
+                        <input type="number" id="newDriverIdNumber">
+
+                        <label>Broj ugovora o radu:</label>
+                        <input type="number" id="newDriverWorkNumber">
+
                     </div>
                 </div>
                 <div id="modalAddDriverButtons">
