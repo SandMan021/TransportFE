@@ -14,7 +14,6 @@ function getDataFromDB() {
         });
 }
 
-
 function addListenersToDelete() {
     let listOfDeleteButtonsInTable = document.getElementsByClassName("btnDelete");
     for (let i = 0; i < listOfDeleteButtonsInTable.length; i++) {
@@ -159,9 +158,9 @@ function createNewDriver(e) {
                     showSuccessScreenOnModalNewDriver();
                 }
             })
-            .catch(err => 
-                err?
-                alert('Greška, neki podaci već postoje u bazi i ne mogu biti vezani za drugog vozača (JMBG, broj lk. ...)'):null);
+            .catch(err =>
+                err ?
+                alert('Greška, neki podaci već postoje u bazi i ne mogu biti vezani za drugog vozača (JMBG, broj lk. ...)') : null);
     }
 }
 
@@ -194,14 +193,13 @@ function validateFieldsDriver(newDriver) {
     if (newDriver.workContract == '') {
         isError = true;
         errorText = errorText + '\n-Niste uneli broj ugovora o radu.';
-    } 
-    if(isError){
-        alert(errorText);
     }
-    else {
+    if (isError) {
+        alert(errorText);
+    } else {
         return true;
     }
-    
+
 }
 
 function showSuccessScreenOnModalNewDriver() {
@@ -232,35 +230,38 @@ function fillmodalAddDriverWithHTML() {
     let wrapperContetn = document.getElementById("modalAddDriverWrapperContent");
     wrapperContetn.innerHTML = ` 
         <div id="modalAddDriverDetails">
-        <div id="modalMoreInfoDriverPicture">
-        <div ><img src="./img/account_circle-black-18dp.svg" id="output"></div>
-        <input id="file" type="file" name="file" accept="image/*" class="custom-file-input" onchange="loadFile(event)">
+            <div id="modalMoreInfoDriverPicture">
+                <div >
+                    <img src="./img/account_circle-black-18dp.svg" id="output">
+                </div>
+                <input id="file" type="file" name="file" accept="image/*" class="custom-file-input" onchange="loadFile(event)">
+            </div>
+                <div id="modalMoreInfoDriverData">
+                            <label>Ime:</label>
+                            <input type="text" id="newDriverName">
+    
+                            <label>Prezime:</label>
+                            <input type="text" id="newDriverLastName">
+    
+                            <label>JMBG:</label>
+                            <input type="number" maxlength="13" id="newDriverUMCN">
+    
+                            <label>Broj pasoša:</label>
+                            <input type="number" id="newDriverPassportNumber">
+    
+                            <label>Broj lične karte:</label>
+                            <input type="number" id="newDriverIdNumber">
+    
+                            <label>Broj ugovora o radu:</label>
+                            <input type="number" id="newDriverWorkNumber">
+    
+                </div>
         </div>
-        <div id="modalMoreInfoDriverData">
-                        <label>Ime:</label>
-                        <input type="text" id="newDriverName">
+        <div id="modalAddDriverButtons">
+            <button id="btnModalAddNewDriverToDB" class="btnModal btnModalInfoSaveChanges">Dodaj vozača</button>
+            <button id="btnModalCancelAddDriver" class="btnModal btnModalInfoCancel">Odustani</button>
+        </div>`;
 
-                        <label>Prezime:</label>
-                        <input type="text" id="newDriverLastName">
-
-                        <label>JMBG:</label>
-                        <input type="number" maxlength="13" id="newDriverUMCN">
-
-                        <label>Broj pasoša:</label>
-                        <input type="number" id="newDriverPassportNumber">
-
-                        <label>Broj lične karte:</label>
-                        <input type="number" id="newDriverIdNumber">
-
-                        <label>Broj ugovora o radu:</label>
-                        <input type="number" id="newDriverWorkNumber">
-
-                    </div>
-    </div>
-    <div id="modalAddDriverButtons">
-        <button id="btnModalAddNewDriverToDB" class="btnModal btnModalInfoSaveChanges">Dodaj vozača</button>
-        <button id="btnModalCancelAddDriver" class="btnModal btnModalInfoCancel">Odustani</button>
-    </div>`;
     document.getElementById("modalWrapperAdd").style.width = "70%";
     document.getElementById("btnModalCancelAddDriver").addEventListener("click", openCloseModalAddDriver);
     document.getElementById("btnModalAddNewDriverToDB").addEventListener("click", createNewDriver);
@@ -308,10 +309,10 @@ function showMoreDriverInfo(e) {
 
     document.getElementById("modalMoreInfoWrapperContent").innerHTML = `
     <div id="modalMoreInfoDriverDetails">
-                    <div id="modalMoreInfoDriverPicture">
-                    <div ><img src="./img/account_circle-black-18dp.svg" id="output"></div>
-                    <input id="file" type="file" name="file" accept="image/*" class="custom-file-input" onchange="loadFile(event)">
-                    </div>
+        <div id="modalMoreInfoDriverPicture">
+            <div><img src="./img/account_circle-black-18dp.svg" id="output"></div>
+            <input id="file" type="file" name="file" accept="image/*" class="custom-file-input" onchange="loadFile(event)">
+        </div>
                     <div id="modalMoreInfoDriverData">
                         <label>Ime:</label>
                         <input type="text" id="driverName" value="` + selectedDriver.name + `">
@@ -331,12 +332,11 @@ function showMoreDriverInfo(e) {
                         <label>Broj ugovora o radu:</label>
                         <input type="number" id="driverWorkNumber" value="` + selectedDriver.workContract + `">
                     </div>
-                </div>
-                <div id="modalMoreInfoButtons">
-                <button id="btnModalInfoSaveChanges" class="btnModal btnModalInfoSaveChanges">Sačuvaj promene</button>
-                <button id="btnCancelModalInfo" class="btnModal btnModalInfoCancel">Odustani</button>
-            </div>
-    `;
+    </div>
+    <div id="modalMoreInfoButtons">
+        <button id="btnModalInfoSaveChanges" class="btnModal btnModalInfoSaveChanges">Sačuvaj promene</button>
+        <button id="btnCancelModalInfo" class="btnModal btnModalInfoCancel">Odustani</button>
+    </div>`;
 
     document.getElementById("btnModalInfoSaveChanges").addEventListener("click", saveChanges);
     document.getElementById("btnCancelModalInfo").addEventListener("click", openCloseModalWindowInfo);
@@ -410,16 +410,11 @@ function saveChanges() {
         //             showSuccessScreenOnModalDriverMoreInfo();
         //         }
         //     })
-            // .catch(err => 
-            //     err?
-            //     alert('Greška prilikom komunikacije sa bazom podataka.'):null);
+        // .catch(err => 
+        //     err?
+        //     alert('Greška prilikom komunikacije sa bazom podataka.'):null);
     }
-    console.log('ovde');
-    getDataFromDB();
-    console.log('ovde2');
-    showSuccessScreenOnModalDriverMoreInfo();
 
-    //openCloseModalWindowInfo();
 }
 
 function openCloseModalWindowDelete() {
@@ -434,5 +429,4 @@ function openCloseModalWindowInfo() {
 function openCloseModalAddDriver() {
     fillmodalAddDriverWithHTML();
     document.getElementById("modalAddDriver").classList.toggle("PrikaziVisibility");
-
 }
